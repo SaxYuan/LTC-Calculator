@@ -9,6 +9,15 @@
     <link rel="stylesheet" crossorigin href="./assets/index-B-Byc3hf.css">
   </head>
   <body>
+    <script>
+      (function(){
+        let redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
     <div id="app"></div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
